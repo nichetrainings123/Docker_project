@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Registration</title>
+</head>
+<body>
+
+<h2>User Registration Form</h2>
+
+<form method="POST">
+
+    Name:<br>
+    <input type="text" name="name" required><br><br>
+
+    Age:<br>
+    <input type="number" name="age" required><br><br>
+
+    Gender:<br>
+    <input type="radio" name="gender" value="Male" required> Male
+    <input type="radio" name="gender" value="Female"> Female
+    <input type="radio" name="gender" value="Other"> Other
+    <br><br>
+
+    Email:<br>
+    <input type="email" name="email" required><br><br>
+
+    Password:<br>
+    <input type="password" name="password" required><br><br>
+
+    Mobile:<br>
+    <input type="text" name="mobile" maxlength="10" required><br><br>
+
+    Address:<br>
+    <textarea name="address" rows="4" cols="30"></textarea><br><br>
+
+    <input type="submit" value="Register">
+
+</form>
+
+<br>
+
+<a href="/login">Already Registered? Login Here</a>
+
+</body>
+</html>
