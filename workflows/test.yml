@@ -1,1 +1,40 @@
+name: Deploy Docker Compose to EC2
 
+on:
+  push:
+    branches:
+      - UAT        
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@v1.2.0
+
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_KEY }}
+          port: 22
+
+          script: |
+            cd /home/ubuntu/Docker_project
+
+            echo "Pull latest code"
+            git pull origin Prod
+
+            echo "Stop containers"
+            docker compose down
+
+            echo "Build latest image"
+            docker compose build --no-cache
+
+            echo "Start containers"
+            docker compose up -d
+
+            echo "Deployment Successful"
