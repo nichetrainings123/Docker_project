@@ -3,7 +3,8 @@ name: Deploy Docker Compose to EC2
 on:
   push:
     branches:
-      - Prod        
+      - Prod  
+  workflow_dispatch:
 
 jobs:
   deploy:
