@@ -5,6 +5,7 @@ on:
     branches:
       - Prod
 
+  workflow_dispatch:   # Manual trigger from GitHub Actions UI
 
 jobs:
   deploy:
