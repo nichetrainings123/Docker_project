@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS emp (
     emp_id SERIAL PRIMARY KEY,
-    emp_name VARCHAR(100) NOT NULL,
+    emp_name VARCHAR(101) NOT NULL,
     department VARCHAR(50),
     salary NUMERIC(10,2),
     age INT,
